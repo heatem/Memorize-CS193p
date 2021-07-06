@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ContentView: View {
-    var emojis = ["🚂", "🚗", "🛵", "⛵️", "🚀", "🚕", "🚌", "🚎", "🏎", "🛻", "🚛", "🚜", "🚲", "🦼", "🛺", "🚡", "🚃", "🚟", "🛶", "🛸", "🛹", "🛼", "🏄", "🚁"]
-    @State var emojiCount = 3
+    @State var emojis = ["🚂", "🚗", "🛵", "⛵️", "🚀", "🚕", "🚌", "🚎", "🏎", "🛻", "🚛", "🚜", "🚲", "🦼", "🛺", "🚡", "🚃", "🚟", "🛶", "🛸", "🛹", "🛼", "🏄", "🚁"]
+    @State var emojiCount = 12
     
     var body: some View {
         VStack {
@@ -25,9 +25,11 @@ struct ContentView: View {
             .foregroundColor(.red)
             Spacer()
             HStack {
-                remove
+                transportation
                 Spacer()
-                add
+                nature
+                Spacer()
+                careers
             }
             .padding(.horizontal)
             .font(.largeTitle)
@@ -35,23 +37,30 @@ struct ContentView: View {
         .padding(.horizontal)
     }
     
-    var remove: some View {
+    var transportation: some View {
         Button {
-            if emojiCount > 1 {
-                emojiCount -= 1
-            }
+            emojis = ["🚂", "🚗", "🛵", "⛵️", "🚀", "🚕", "🚌", "🚎", "🏎", "🛻", "🚛", "🚜", "🚲", "🦼", "🛺", "🚡", "🚃", "🚟", "🛶", "🛸", "🛹", "🛼", "🏄", "🚁"].shuffled()
+            emojiCount = emojis.count
         } label: {
-            Image(systemName: "minus.circle")
+            Image(systemName: "car").font(.title)
         }
     }
     
-    var add: some View {
+    var nature: some View {
         Button {
-            if emojiCount < emojis.count {
-                emojiCount += 1
-            }
+            emojis = ["🌲", "🌳", "🌴", "🌻", "🪨", "🍄", "🌸", "⚡️", "☀️", "❄️", "🪶", "🌵"].shuffled()
+            emojiCount = emojis.count
         } label: {
-            Image(systemName: "plus.circle")
+            Image(systemName: "leaf").font(.title)
+        }
+    }
+    
+    var careers: some View {
+        Button {
+            emojis = ["👷", "🕵️‍♀️", "🧑‍✈️", "🧑‍🚀", "🧑‍⚕️", "👨‍🎓", "👨‍🏫", "👩‍🏭", "🧑‍💻", "🧑‍🎤", "🧑‍🔧", "👨‍🎨", "👩‍🔬"].shuffled()
+            emojiCount = emojis.count
+        } label: {
+            Image(systemName: "person").font(.title)
         }
     }
 }
