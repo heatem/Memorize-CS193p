@@ -42,7 +42,10 @@ struct ContentView: View {
             emojis = ["🚂", "🚗", "🛵", "⛵️", "🚀", "🚕", "🚌", "🚎", "🏎", "🛻", "🚛", "🚜", "🚲", "🦼", "🛺", "🚡", "🚃", "🚟", "🛶", "🛸", "🛹", "🛼", "🏄", "🚁"].shuffled()
             emojiCount = emojis.count
         } label: {
-            Image(systemName: "car").font(.title)
+            VStack {
+                Image(systemName: "car").font(.title)
+                Text("Transport").font(.body)
+            }
         }
     }
     
@@ -51,7 +54,10 @@ struct ContentView: View {
             emojis = ["🌲", "🌳", "🌴", "🌻", "🪨", "🍄", "🌸", "⚡️", "☀️", "❄️", "🪶", "🌵"].shuffled()
             emojiCount = emojis.count
         } label: {
-            Image(systemName: "leaf").font(.title)
+            VStack {
+                Image(systemName: "leaf").font(.title)
+                Text("Nature").font(.body)
+            }
         }
     }
     
@@ -60,7 +66,10 @@ struct ContentView: View {
             emojis = ["👷", "🕵️‍♀️", "🧑‍✈️", "🧑‍🚀", "🧑‍⚕️", "👨‍🎓", "👨‍🏫", "👩‍🏭", "🧑‍💻", "🧑‍🎤", "🧑‍🔧", "👨‍🎨", "👩‍🔬"].shuffled()
             emojiCount = emojis.count
         } label: {
-            Image(systemName: "person").font(.title)
+            VStack {
+                Image(systemName: "person").font(.title)
+                Text("Careers").font(.body)
+            }
         }
     }
 }
